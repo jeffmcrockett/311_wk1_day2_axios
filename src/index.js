@@ -8,13 +8,13 @@ const api_key = 'd771b19ef336ed8381def3a60b574464'
 
 const discoverMovie = () => {
   const url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}`
-  // code here
-  return axios(url);
+  // code here, call to an axios library
+  return axios(url); 
 }
 
 const getMovieById = (id) => {
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`
-  // code here
+  // code here, call to axios library looking for a certain id and returning the data
   return axios(url).then(function(result) {
     return result.data;
   })
@@ -23,7 +23,7 @@ const getMovieById = (id) => {
 const getMovieByIdFailure = () => {
   const fakeId = 1 // FAKE ID HERE
   const url = `https://api.themoviedb.org/3/movie/${fakeId}?api_key=${api_key}`
-  // code here
+  // code here, display an error when the call is unsuccessful
   return axios(url).then(function(response) {
     return response.status
   })
